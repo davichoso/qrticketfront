@@ -1,4 +1,6 @@
+'use client'
 import React from 'react';
+import Link from 'next/link';
 import styles from './NavButton.module.css';
 
 interface NavButtonProps {
@@ -8,10 +10,19 @@ interface NavButtonProps {
 }
 
 const NavButton: React.FC<NavButtonProps> = ({ href, text, color }) => {
+  // Handle hash links (for same-page navigation)
+  if (href.startsWith('#')) {
+    return (
+      <a href={href} className={styles.navButton} style={{ color }}>
+        {text}
+      </a>
+    );
+  }
+
   return (
-    <a href={href} className={styles.navButton} style={{ color }}>
+    <Link href={href} className={styles.navButton} style={{ color }}>
       {text}
-    </a>
+    </Link>
   );
 };
 

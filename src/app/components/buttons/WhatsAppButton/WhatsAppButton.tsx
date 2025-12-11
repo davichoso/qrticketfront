@@ -13,13 +13,15 @@ interface WhatsAppButtonProps {
 
 const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
     eventName,
-    phoneNumber = '1234567890',
+    phoneNumber = '+59170793005',
     width = '100%',
     height = '48px',
     className
 }) => {
     const message = `Quiero comprar entrada para el evento ${eventName}`;
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    // Remove spaces and + sign for WhatsApp URL format
+    const cleanPhoneNumber = phoneNumber.replace(/\s+/g, '').replace(/^\+/, '');
+    const whatsappUrl = `https://wa.me/${cleanPhoneNumber}?text=${encodeURIComponent(message)}`;
 
     return (
         <a

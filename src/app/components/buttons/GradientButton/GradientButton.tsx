@@ -1,5 +1,7 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './GradientButton.module.css';
 import clsx from 'clsx';
 
@@ -13,8 +15,11 @@ interface GradientButtonProps {
 }
 
 const GradientButton: React.FC<GradientButtonProps> = ({ href, text, width, height, className, icon }) => {
-  return (
-    <a href={href} className={clsx(styles.button, className)} style={{ width, height }}>
+  // Use Link for internal routes, <a> for external URLs or hash links
+  const isExternal = href.startsWith('http') || href.startsWith('https') || href.startsWith('#');
+  
+  const buttonContent = (
+    <>
       {icon && (
         <Image
           src={icon}
@@ -25,7 +30,21 @@ const GradientButton: React.FC<GradientButtonProps> = ({ href, text, width, heig
         />
       )}
       {text}
-    </a>
+    </>
+  );
+
+  if (isExternal) {
+    return (
+      <a href={href} className={clsx(styles.button, className)} style={{ width, height }}>
+        {buttonContent}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={clsx(styles.button, className)} style={{ width, height }}>
+      {buttonContent}
+    </Link>
   );
 };
 

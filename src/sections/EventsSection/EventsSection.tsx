@@ -13,7 +13,7 @@ const EventsSection: React.FC = () => {
           date="Mar. 30 de abril"
           time="22:00 hrs"
           venue="Alice Park"
-          buttonHref="https://example.com"
+          buttonHref="/evento"
         />
         <EventCard
           imageSrc="/image-card-event-example-02.jpg"
@@ -21,7 +21,7 @@ const EventsSection: React.FC = () => {
           date="Sab. 11 de mayo"
           time="21:00 hrs"
           venue="Alice Park"
-          buttonHref="http://localhost:3000/butaca"
+          buttonHref="/butaca"
         />
         <EventCard
           imageSrc="/image-card-event-example-03.jpg"
@@ -29,7 +29,7 @@ const EventsSection: React.FC = () => {
           date="Sab. 11 de mayo"
           time="21:00 hrs"
           venue="Awra"
-          buttonHref="https://example.com"
+          buttonHref="/evento"
         />
         <EventCard
           imageSrc="/image-card-event-example-04.jpg"
@@ -37,7 +37,7 @@ const EventsSection: React.FC = () => {
           date="Sab. 18 de mayo"
           time="22:00 hrs"
           venue="Awra"
-          buttonHref="https://example.com"
+          buttonHref="/evento"
         />
       </div>
     </div>

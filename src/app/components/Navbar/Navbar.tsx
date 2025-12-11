@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './Navbar.module.css';
 import Avatar from '../Avatar/Avatar';
 import NavButton from '../buttons/NavButton/NavButton';
@@ -14,24 +15,24 @@ const Navbar: React.FC = () => {
   };
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>
+      <Link href="/" className={styles.logo}>
         <Image 
           src="/logo/qrticket-logo-dark-theme.svg" 
           alt="QRTicket Logo"
           width={128} 
           height={32.25} 
         />
-      </div>
+      </Link>
       <div className={styles.menu}>
         <NavButton href="/evento" text="EVENTOS" color="#fff" />
-        <NavButton href="#about" text="MIS TICKETS" color="#fff" />
+        <NavButton href="/" text="MIS TICKETS" color="#fff" />
         <Avatar 
           src="/avatar-example.png"
           alt="User Avatar"
         />
       </div>
 
-      <CartButton href="#cart" text="CARRITO" color="#fff" className={styles.cartButton} />
+      <CartButton text="CARRITO" color="#fff" className={styles.cartButton} />
 
       <div className={styles.burgerMenu} onClick={toggleMenu}>
         <div className={styles.burgerBar}></div>
@@ -40,8 +41,8 @@ const Navbar: React.FC = () => {
       </div>
       {menuOpen && (
         <div className={styles.dropdownMenu}>
-          <NavButton href="#home" text="EVENTOS" color="#fff" />
-          <NavButton href="#about" text="MIS TICKETS" color="#fff" />
+          <NavButton href="/evento" text="EVENTOS" color="#fff" />
+          <NavButton href="/" text="MIS TICKETS" color="#fff" />
           <div style={{display: 'flex', justifyContent: 'center', width: '140px'}}>
             <Avatar 
               src="/avatar-example.png"

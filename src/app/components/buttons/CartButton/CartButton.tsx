@@ -6,7 +6,7 @@ import styles from './CartButton.module.css';
 import CartModal from '../../CartModal/CartModal';
 
 interface CartButtonProps {
-  href: string;
+  href?: string; // Made optional since we're using button instead
   text: string;
   color: string;
   className?: string;
@@ -29,7 +29,15 @@ const CartButton: React.FC<CartButtonProps> = ({ href, text, color, className })
 
   return (
     <>
-    <a href={href} className={clsx(styles.cartButton, className)} style={{ color }} onClick={() => setCartOpen(true)}>
+    <button 
+      type="button"
+      className={clsx(styles.cartButton, className)} 
+      style={{ color }} 
+      onClick={(e) => {
+        e.preventDefault();
+        setCartOpen(true);
+      }}
+    >
       <Image 
         src="/icons/cart-icon.svg"
         alt="Cart Icon"
@@ -38,15 +46,15 @@ const CartButton: React.FC<CartButtonProps> = ({ href, text, color, className })
         className={styles.icon}
       />
       {text}
-      {isCartOpen && (
-        <CartModal
-          items={cartItems}
-          total={total}
-          onClose={() => setCartOpen(false)}
-          onDelete={handleDelete}
-        />
-      )}
-    </a>
+    </button>
+    {isCartOpen && (
+      <CartModal
+        items={cartItems}
+        total={total}
+        onClose={() => setCartOpen(false)}
+        onDelete={handleDelete}
+      />
+    )}
     </>
   );
 };
