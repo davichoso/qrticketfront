@@ -1,0 +1,40 @@
+.section {
+    padding: 0 195px; 
+    background-color: #1a1a1a;
+    padding-bottom: 64px;
+}
+
+.title {
+    color: white;
+    margin-bottom: 32px;
+    font-size: 2rem;
+    text-align: left;
+    margin-top: 0;
+    padding-top: 64px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 94px; 
+}
+
+@media (max-width: 1440px) {
+    .grid {
+        gap: 48px; 
+    }
+} 
+
+@media (max-width: 768px) {
+    .section {
+        padding: 0 16px; 
+        background-color: #1a1a1a;
+        padding-bottom: 64px;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 80px;
+        justify-items: center;
+    }
+}
+  

@@ -1,0 +1,25 @@
+.footer {
+  position: relative;
+  width: 100%;
+  background: radial-gradient(
+    circle at calc(100% - 250px) +450px,
+    #12B9EE,
+    rgba(0, 0, 0, 0) 60%
+  ),
+  #000;
+  color: white;
+  padding: 40px 195px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; 
+  gap: 32px; 
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; 
+    padding: 40px 16px;
+  }
+}

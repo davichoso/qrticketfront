@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    background-color: #171717;
+    padding: 64px 20px;
+    flex-wrap: wrap;
+  }
+  
+  .leftColumn {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .rightColumn {
+    flex: 1;
+    margin-left: 10px;
+  }
+  
+  .separator {
+    border-top: 1px solid #555;
+    margin: 20px 0;
+    width: 100%;
+  } 
+
+  @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .leftColumn, .rightColumn {
+    margin: 0; 
+  }
+}

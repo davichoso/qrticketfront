@@ -1,0 +1,78 @@
+.ticketItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 16px;
+    border: 1px solid #50E3C1;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+  
+.ticketItemSoldOut {
+    background-color: #333;
+    border: 1px solid #555;
+}
+  
+.ticketInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    margin-right: 24px;
+}
+  
+.ticketInfoHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+  
+.ticketInfoHeader div:first-child {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+  
+.description {
+    color: #B8B8B8;
+}
+  
+.ticketPriceContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 32px;
+}
+  
+.ticketPrice {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-left: 10px;
+    min-width: 72px;
+    text-align: start;
+}
+  
+.soldOutLabel {
+    background-color: #555;
+    color: #B8B8B8;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+  
+.quantityControl {
+    display: flex;
+    align-items: center;
+}
+  
+.button {
+    background-color: #171717;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+  

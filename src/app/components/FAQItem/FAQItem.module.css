@@ -1,0 +1,29 @@
+.container {
+    border: 1px solid #2d2d2d;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 16px;
+    background-color: #171717;
+    cursor: pointer;
+  }
+  
+  .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+  }
+  
+  .answer {
+    margin-top: 10px;
+    font-size: 0.875rem;
+    color: #aaa;
+  }
+  
+  .icon {
+    font-size: 1.25rem;
+    color: #50E3C1;
+  }
+  

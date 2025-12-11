@@ -1,0 +1,22 @@
+.cartButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 140px;
+    height: 44px;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .cartButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .icon {
+    margin-right: 8px;
+  }
+  

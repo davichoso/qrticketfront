@@ -1,0 +1,76 @@
+.container {
+    background-color: #1c1c1c;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 20px;
+    overflow: hidden;
+    
+}
+  
+.headerContainer {
+    background-color: #3C3E3F;
+    padding: 8px 16px;
+}
+
+.header {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #3C3E3F;
+}
+  
+.subHeader {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #fff;
+    padding: 8px 16px;
+}
+  
+  .ticketItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #2d2d2d;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .ticketItemSoldOut {
+    background-color: #333;
+    border: 1px solid #555;
+  }
+  
+  .ticketInfo {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .ticketPrice {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  .quantityControl {
+    display: flex;
+    align-items: center;
+  }
+  
+  .button {
+    background-color: #171717;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .content {
+    padding: 0px 16px;
+    padding-bottom: 16px;
+  }
+
+  .gradientButton {
+    margin-top: 32px;
+  }

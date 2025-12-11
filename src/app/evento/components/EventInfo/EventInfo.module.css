@@ -1,0 +1,32 @@
+.container {
+    margin-top: 0px;
+    color: #fff;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+  
+  .infoItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .icon {
+    margin-right: 16px;
+  }
+  
+  .primaryText {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .secondaryText {
+    font-size: 1rem;
+    color: #aaa;
+  }
+  
