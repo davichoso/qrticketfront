@@ -9,9 +9,19 @@ interface TicketItemProps {
   price: string;
   soldOut?: boolean;
   chooseSeats?: boolean;
+  quantity?: number;
+  onQuantityChange?: (quantity: number) => void;
 }
 
-const TicketItem: React.FC<TicketItemProps> = ({ name, description, price, soldOut, chooseSeats }) => {
+const TicketItem: React.FC<TicketItemProps> = ({ 
+  name, 
+  description, 
+  price, 
+  soldOut, 
+  chooseSeats,
+  quantity = 0,
+  onQuantityChange
+}) => {
   return (
     <div className={`${styles.ticketItem} ${soldOut ? styles.ticketItemSoldOut : ''}`}>
       <div className={styles.ticketInfo}>
@@ -29,7 +39,10 @@ const TicketItem: React.FC<TicketItemProps> = ({ name, description, price, soldO
           {chooseSeats ? (
             <GradientButton href="#" text="Elegir butacas" width="150px" height="40px" />
           ) : (
-            <QuantityControl />
+            <QuantityControl 
+              quantity={quantity}
+              onQuantityChange={onQuantityChange}
+            />
           )}
         </div>
       )}

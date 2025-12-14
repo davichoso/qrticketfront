@@ -1,25 +1,51 @@
 'use client'
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './QuantityControl.module.css';
 
-const QuantityControl: React.FC = () => {
-  const [count, setCount] = useState(0);
+interface QuantityControlProps {
+  quantity?: number;
+  onQuantityChange?: (quantity: number) => void;
+}
 
-  const handleIncrement = () => {
-    setCount(count + 1);
+const QuantityControl: React.FC<QuantityControlProps> = ({ 
+  quantity = 0, 
+  onQuantityChange 
+}) => {
+  const handleIncrement = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (onQuantityChange) {
+      onQuantityChange(quantity + 1);
+    }
   };
 
-  const handleDecrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
+  const handleDecrement = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (quantity > 0 && onQuantityChange) {
+      onQuantityChange(quantity - 1);
     }
   };
 
   return (
     <div className={styles.container}>
-      <button className={styles.button} onClick={handleDecrement}>-</button>
-      <div className={styles.input}>{count}</div>
-      <button className={styles.button} onClick={handleIncrement}>+</button>
+      <button 
+        type="button"
+        className={styles.button} 
+        onClick={handleDecrement}
+        aria-label="Decrementar cantidad"
+      >
+        -
+      </button>
+      <div className={styles.input}>{quantity}</div>
+      <button 
+        type="button"
+        className={styles.button} 
+        onClick={handleIncrement}
+        aria-label="Incrementar cantidad"
+      >
+        +
+      </button>
     </div>
   );
 };

@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, { useState, useMemo } from 'react';
 import styles from './TicketForm.module.css';
 import TicketItem from '../TicketItem/TicketItem';
 import GradientButton from '@/app/components/buttons/GradientButton/GradientButton';
@@ -16,6 +17,41 @@ interface TicketFormProps {
 }
 
 const TicketForm: React.FC<TicketFormProps> = ({ tickets }) => {
+  const [quantities, setQuantities] = useState<{ [key: string]: number }>({});
+
+  const handleQuantityChange = (ticketName: string, quantity: number) => {
+    setQuantities(prev => ({
+      ...prev,
+      [ticketName]: quantity
+    }));
+  };
+
+  const totalTickets = useMemo(() => {
+    return Object.values(quantities).reduce((sum, qty) => sum + qty, 0);
+  }, [quantities]);
+
+  const totalPrice = useMemo(() => {
+    let total = 0;
+    
+    tickets.forEach((ticket) => {
+      // Skip sold out tickets
+      if (ticket.soldOut) return;
+      
+      const quantity = quantities[ticket.name] || 0;
+      // Skip if no quantity selected
+      if (quantity === 0) return;
+      
+      // Extract price number from string (e.g., "80 Bs" -> 80, "40 Bs" -> 40)
+      // Remove all non-digit characters and parse
+      const priceStr = ticket.price.replace(/[^\d]/g, '');
+      const price = parseInt(priceStr, 10) || 0;
+      
+      total += price * quantity;
+    });
+    
+    return total;
+  }, [tickets, quantities]);
+
   return (
     <div className={styles.container}>
       <div className={styles.headerContainer}>
@@ -31,11 +67,19 @@ const TicketForm: React.FC<TicketFormProps> = ({ tickets }) => {
             price={ticket.price}
             soldOut={ticket.soldOut}
             chooseSeats={ticket.chooseSeats}
+            quantity={quantities[ticket.name] || 0}
+            onQuantityChange={(qty) => handleQuantityChange(ticket.name, qty)}
           />
         ))}
+        {totalTickets > 0 && totalPrice > 0 && (
+          <div className={styles.totalSection}>
+            <div className={styles.totalLabel}>TOTAL</div>
+            <div className={styles.totalAmount}>{totalPrice} Bs</div>
+          </div>
+        )}
         <GradientButton 
           href='#'
-          text='AGREGAR AL CARRITO'
+          text='COMPRAR'
           width='100%'
           height='48px'
           className={styles.gradientButton}

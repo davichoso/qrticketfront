@@ -5,7 +5,7 @@ import ShareButton from '@/app/components/buttons/ShareButton/ShareButton';
 import BrokerInfo from '../BrokerInfo/BrokerInfo';
 import SectionInfo from '../SectionInfo/SectionInfo';
 
-const EventDetails = ({ brokerInfo = true, imageSrc = '/image-card-event-example.png' }) => {
+const EventDetails = ({ brokerInfo = true, imageSrc = '/image-card-event-example-01.png' }) => {
     const sectionItems = [
         { icon: '/icons/info/age-icon.svg', text: 'Mayores de 18 años' },
         { icon: '/icons/info/id-icon.svg', text: 'Ingreso con carnet de identidad' },

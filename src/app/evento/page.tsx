@@ -16,18 +16,6 @@ const EventPage = () => {
 
   const tickets = [
     {
-      name: "Lounge VIP",
-      description: "Mesa numerada en zona VIP. 12 invitados, incluye souvenirs y sixpack de corona",
-      price: "800 Bs",
-      
-    },
-    {
-      name: "Lounge",
-      description: "Mesa numerada en zona general. 12 invitados, incluye souvenirs y sixpack de corona",
-      price: "600 Bs",
-      soldOut: true,
-    },
-    {
       name: "VIP",
       description: "Acceso a zona VIP. Baño y bar exclusivos zona VIP",
       price: "80 Bs",
