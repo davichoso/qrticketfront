@@ -6,18 +6,16 @@ import styles from './GradientButton.module.css';
 import clsx from 'clsx';
 
 interface GradientButtonProps {
-  href: string;
+  href?: string;
   text: string;
   width: string;
   height: string;
   className?: string;
   icon?: string;
+  onClick?: () => void;
 }
 
-const GradientButton: React.FC<GradientButtonProps> = ({ href, text, width, height, className, icon }) => {
-  // Use Link for internal routes, <a> for external URLs or hash links
-  const isExternal = href.startsWith('http') || href.startsWith('https') || href.startsWith('#');
-  
+const GradientButton: React.FC<GradientButtonProps> = ({ href, text, width, height, className, icon, onClick }) => {
   const buttonContent = (
     <>
       {icon && (
@@ -32,6 +30,28 @@ const GradientButton: React.FC<GradientButtonProps> = ({ href, text, width, heig
       {text}
     </>
   );
+
+  // If onClick is provided, render as button
+  if (onClick) {
+    return (
+      <button 
+        type="button"
+        onClick={onClick} 
+        className={clsx(styles.button, className)} 
+        style={{ width, height }}
+      >
+        {buttonContent}
+      </button>
+    );
+  }
+
+  // Otherwise, render as link
+  if (!href) {
+    return null;
+  }
+
+  // Use Link for internal routes, <a> for external URLs or hash links
+  const isExternal = href.startsWith('http') || href.startsWith('https') || href.startsWith('#');
 
   if (isExternal) {
     return (

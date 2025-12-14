@@ -26,14 +26,14 @@ const PromotionalBanner: React.FC<PromotionalBannerProps> = ({
         <div className={styles.buttonContainer}>
           <GradientButton
             href="/evento"
-            text="VER ENTRADAS"
-            width="177px"
+            text="Comprar online (Web)"
+            width="280px"
             height="48px"
             icon="/icons/ticket-icon.svg"
           />
           <WhatsAppButton
             eventName={title}
-            width="177px"
+            width="280px"
             height="48px"
           />
         </div>

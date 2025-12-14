@@ -38,7 +38,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
                 height={20}
                 className={styles.icon}
             />
-            WhatsApp
+            Comprar por WhatsApp
         </a>
     );
 };

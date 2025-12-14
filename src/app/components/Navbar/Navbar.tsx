@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
         />
       </Link>
       <div className={styles.menu}>
-        <NavButton href="/evento" text="EVENTOS" color="#fff" />
+        <NavButton href="/" text="EVENTOS" color="#fff" />
       </div>
 
       <div className={styles.burgerMenu} onClick={toggleMenu}>
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
       </div>
       {menuOpen && (
         <div className={styles.dropdownMenu}>
-          <NavButton href="/evento" text="EVENTOS" color="#fff" />
+          <NavButton href="/" text="EVENTOS" color="#fff" />
         </div>
       )}
 

@@ -3,6 +3,7 @@ import React, { useState, useMemo } from 'react';
 import styles from './TicketForm.module.css';
 import TicketItem from '../TicketItem/TicketItem';
 import GradientButton from '@/app/components/buttons/GradientButton/GradientButton';
+import PaymentModal from '../PaymentModal/PaymentModal';
 
 interface Ticket {
   name: string;
@@ -18,6 +19,7 @@ interface TicketFormProps {
 
 const TicketForm: React.FC<TicketFormProps> = ({ tickets }) => {
   const [quantities, setQuantities] = useState<{ [key: string]: number }>({});
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
 
   const handleQuantityChange = (ticketName: string, quantity: number) => {
     setQuantities(prev => ({
@@ -78,13 +80,23 @@ const TicketForm: React.FC<TicketFormProps> = ({ tickets }) => {
           </div>
         )}
         <GradientButton 
-          href='#'
           text='COMPRAR'
           width='100%'
           height='48px'
           className={styles.gradientButton}
+          onClick={() => {
+            if (totalTickets > 0 && totalPrice > 0) {
+              setIsPaymentModalOpen(true);
+            }
+          }}
         />
       </div>
+      {isPaymentModalOpen && (
+        <PaymentModal 
+          total={totalPrice}
+          onClose={() => setIsPaymentModalOpen(false)}
+        />
+      )}
     </div>
   );
 };

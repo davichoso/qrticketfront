@@ -39,7 +39,7 @@ const EventCard: React.FC<EventCardProps> = ({
         <div className={styles.buttonContainer}>
           <GradientButton
             href={buttonHref}
-            text="VER ENTRADAS"
+            text="Comprar online (Web)"
             width="100%"
             height="48px"
             icon="/icons/ticket-icon.svg"
