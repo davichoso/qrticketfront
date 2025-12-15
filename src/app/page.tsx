@@ -8,7 +8,7 @@ const Home: React.FC = () => {
     <div style={{ marginTop: '60px' }}>
       <PromotionalBanner
         backgroundImage="/promotional-banner-example.png"
-        title="Trueno en Concierto"
+        title="Lgante en Concierto"
         date="22 de junio"
         venue="Teatro al Aire Libre"
         textColor="white"
