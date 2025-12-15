@@ -191,7 +191,7 @@ const SignUpForm: React.FC = () => {
                     width="auto"
                     height="37px"
                     onClick={(e) => {
-                      e.preventDefault();
+                      e?.preventDefault();
                       handleValidateEmail();
                     }}
                     className={styles.validateButton}
