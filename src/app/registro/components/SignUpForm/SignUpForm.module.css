@@ -44,6 +44,45 @@
   .inputContainer {
     flex: 1;
   }
+
+  .emailInputWrapper {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .emailInputWrapper .input {
+    flex: 1;
+  }
+
+  .validateButton {
+    flex-shrink: 0;
+  }
+
+  .validationMessage {
+    font-size: 0.875rem;
+    color: #aaa;
+    margin-top: 8px;
+    margin-left: 0;
+  }
+
+  .inputError {
+    border-color: #ff4444 !important;
+  }
+
+  .errorMessage {
+    font-size: 0.875rem;
+    color: #ff4444;
+    margin-top: 8px;
+    margin-left: 0;
+  }
+
+  .successMessage {
+    font-size: 0.875rem;
+    color: #4caf50;
+    margin-top: 8px;
+    margin-left: 0;
+  }
   
   .separator {
     display: flex;

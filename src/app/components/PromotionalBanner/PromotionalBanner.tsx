@@ -25,7 +25,7 @@ const PromotionalBanner: React.FC<PromotionalBannerProps> = ({
         <p className={styles.details}>{date} | {venue}</p>
         <div className={styles.buttonContainer}>
           <GradientButton
-            href="/evento"
+            href="/registro?redirect=/evento"
             text="Comprar online (Web)"
             width="280px"
             height="48px"

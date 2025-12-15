@@ -13,9 +13,10 @@ interface GradientButtonProps {
   className?: string;
   icon?: string;
   onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
 }
 
-const GradientButton: React.FC<GradientButtonProps> = ({ href, text, width, height, className, icon, onClick }) => {
+const GradientButton: React.FC<GradientButtonProps> = ({ href, text, width, height, className, icon, onClick, type = 'button' }) => {
   const buttonContent = (
     <>
       {icon && (
@@ -31,11 +32,11 @@ const GradientButton: React.FC<GradientButtonProps> = ({ href, text, width, heig
     </>
   );
 
-  // If onClick is provided, render as button
-  if (onClick) {
+  // If onClick is provided or type is submit/reset, render as button
+  if (onClick || type === 'submit' || type === 'reset') {
     return (
       <button 
-        type="button"
+        type={type}
         onClick={onClick} 
         className={clsx(styles.button, className)} 
         style={{ width, height }}

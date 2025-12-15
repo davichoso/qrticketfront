@@ -38,7 +38,7 @@ const EventCard: React.FC<EventCardProps> = ({
         <p className={styles.venue}>{venue}</p>
         <div className={styles.buttonContainer}>
           <GradientButton
-            href={buttonHref}
+            href={`/registro?redirect=${encodeURIComponent(buttonHref)}`}
             text="Comprar online (Web)"
             width="100%"
             height="48px"

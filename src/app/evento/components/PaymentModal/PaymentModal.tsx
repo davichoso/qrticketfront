@@ -38,3 +38,4 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ total, onClose }) => {
 
 export default PaymentModal;
 
+
