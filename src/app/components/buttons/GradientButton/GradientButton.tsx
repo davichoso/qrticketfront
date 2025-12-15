@@ -12,7 +12,7 @@ interface GradientButtonProps {
   height: string;
   className?: string;
   icon?: string;
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
   type?: 'button' | 'submit' | 'reset';
 }
 
